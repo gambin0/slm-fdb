@@ -7,6 +7,7 @@ import { environment } from '../environments/environment';
 import { FirebaseModule } from '../firebase/firebase.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule } from './material-module/material.module';
+import { RecipeEditorComponent } from './recipe-editor/recipe-editor.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { MaterialModule } from './material-module/material.module';
     FormsModule,
     MaterialModule
   ],
-  declarations: [ AppComponent ],
+  declarations: [ AppComponent, RecipeEditorComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
