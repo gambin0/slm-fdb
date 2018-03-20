@@ -8,6 +8,8 @@ import { FirebaseModule } from '../firebase/firebase.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule } from './material-module/material.module';
 import { RecipeEditorComponent } from './recipe-editor/recipe-editor.component';
+import { MeasurementEditorComponent } from './measurement-editor/measurement-editor.component';
+import { ItemEditorComponent } from './item-editor/item-editor.component';
 
 @NgModule({
   imports: [
@@ -18,7 +20,7 @@ import { RecipeEditorComponent } from './recipe-editor/recipe-editor.component';
     FormsModule,
     MaterialModule
   ],
-  declarations: [ AppComponent, RecipeEditorComponent ],
+  declarations: [ AppComponent, RecipeEditorComponent, MeasurementEditorComponent, ItemEditorComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}

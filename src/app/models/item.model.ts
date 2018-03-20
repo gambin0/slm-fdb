@@ -1,6 +1,6 @@
 import { Measurement } from './measurement.model';
 
-export class TemplateItem {
+export class ItemName {
     name: string;
 }
 
