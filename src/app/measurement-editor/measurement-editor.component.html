@@ -1,3 +1,8 @@
-<p>
-  measurement-editor works!
-</p>
+
+  <mat-select placeholder="Measurement">
+    <mat-option *ngFor="let item of measurements" [value]="item">
+      {{ item }}
+    </mat-option>
+  </mat-select>
+  <input matInput type="number" placeholder="Favorite food" value="0">
+
