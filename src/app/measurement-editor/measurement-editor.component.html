@@ -1,8 +1,8 @@
 
-  <mat-select placeholder="Measurement">
-    <mat-option *ngFor="let item of measurements" [value]="item">
+  <mat-select placeholder="Measurement" [(value)]="measurement.type" (change)="measurementChanged()">
+    <mat-option *ngFor="let item of measurements" [value]="item" >
       {{ item }}
     </mat-option>
   </mat-select>
-  <input matInput type="number" placeholder="Favorite food" value="0">
-
+  <input matInput [(ngModel)]="measurement.value" type="number" placeholder="Value" value="0" (change)="measurementChanged()">
+  <div>{{measurement | json}}</div>
