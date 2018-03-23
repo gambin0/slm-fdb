@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { User } from '@firebase/auth-types';
-import { Recipe, ShoppingList } from './models';
+import { Recipe, ShoppingList, Measurement } from './models';
 
 interface Post {
   title: string;
@@ -39,6 +39,7 @@ export class AppComponent implements OnInit {
   title: string;
   content: string;
 
+  testMeasurement = new Measurement();
 
 
   constructor(
@@ -67,6 +68,9 @@ export class AppComponent implements OnInit {
           return { id, data };
         });
       });
+
+      this.testMeasurement.type = 'cup';
+      this.testMeasurement.value = 0;
   }
 
   addPost() {
