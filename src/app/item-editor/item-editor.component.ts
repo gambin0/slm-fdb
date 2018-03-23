@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestoreCollection } from 'angularfire2/firestore';
+import { AngularFirestoreCollection, AngularFirestore } from 'angularfire2/firestore';
 import { ItemName } from '../models';
 import { Observable } from 'rxjs/Observable';
 
@@ -10,12 +10,20 @@ import { Observable } from 'rxjs/Observable';
 })
 export class ItemEditorComponent implements OnInit {
   itemNamesCollection: AngularFirestoreCollection<ItemName>;
-  //itemNames: Observable
+  itemNames: Observable<any[]>;
 
+  itemCollectionName = 'itemNames';
 
-  constructor() { }
+  
+
+  constructor(private afs: AngularFirestore) { }
 
   ngOnInit() {
+
+    this.itemNamesCollection = this.afs.collection(this.itemCollectionName);
+    this.itemNames = this.itemNamesCollection.valueChanges();
   }
+  
+
 
 }
